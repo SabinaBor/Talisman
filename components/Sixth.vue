@@ -11,7 +11,7 @@
         >
             <slider-item v-for="(image, index) in imageList" :key="index">
               <div class="img__wrapper">
-                <img :src="image" />
+                <img :src="image.url" />
               </div>
             </slider-item>
         </slider>
@@ -33,10 +33,22 @@ export default {
     return {
       sliderIndex: 0,
       imageList: [
-        '/_nuxt/assets/images/1x/six.png',
-        '/_nuxt/assets/images/1x/seventh.png',
-        '/_nuxt/assets/images/1x/eight.png',
-        '/_nuxt/assets/images/1x/nine.png'
+        {
+          id: 1,
+          url: '/six.png'
+        },
+        {
+          id: 2,
+          url: '/seventh.png'
+        },
+        {
+          id: 3,
+          url: '/eight.png'
+        },
+        {
+          id: 4,
+          url: '/nine.png'
+        }
       ],
     }
   }
@@ -46,6 +58,13 @@ export default {
 <style lang="scss">
   .container {
     width: 600px;
-    height: 600px;
+    height: 400px;
+    .slider {
+      width: 100%!important;
+      height: 100%!important;
+      img {
+        width: 100%;
+      }
+    }
   }
 </style>

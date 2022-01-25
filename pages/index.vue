@@ -57,8 +57,8 @@ export default {
   }
   &__right {
     &__first {
+      background: url("../static/first.png") no-repeat center;
       background-size: cover;
-      background: url("../assets/images/1x/first.png") no-repeat center;
       height: 100vh;
       padding: 40px 0 0 8vw;
       h1, p {
@@ -120,8 +120,8 @@ export default {
       }
       &__image {
         width: 50%;
+        background: url("../static/third.png") no-repeat 0 center;
         background-size: cover;
-        background: url("../assets/images/1x/third.png") no-repeat 0 center;
       }
     }
     &__third {
@@ -129,8 +129,8 @@ export default {
     }
     &__fourth {
       &__image {
+        background: url("../static/fourth.png") no-repeat 0 center;
         background-size: cover;
-        background: url("../assets/images/1x/fourth.png") no-repeat 0 center;
       }
     }
     &__fifth {
