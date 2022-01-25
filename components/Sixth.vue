@@ -33,7 +33,10 @@ export default {
     return {
       sliderIndex: 0,
       imageList: [
-        "_nuxt/assets/images/1x/10.png"
+        '/_nuxt/assets/images/1x/six.png',
+        '/_nuxt/assets/images/1x/seventh.png',
+        '/_nuxt/assets/images/1x/eight.png',
+        '/_nuxt/assets/images/1x/nine.png'
       ],
     }
   }
