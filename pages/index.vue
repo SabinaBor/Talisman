@@ -57,10 +57,8 @@ export default {
   }
   &__right {
     &__first {
-      background: url("../assets/images/1x/first.png");
-      background-repeat: no-repeat;
       background-size: cover;
-      background-position: center;
+      background: url("../assets/images/1x/first.png") no-repeat center;
       height: 100vh;
       padding: 40px 0 0 8vw;
       h1, p {
@@ -122,10 +120,8 @@ export default {
       }
       &__image {
         width: 50%;
-        background: url("../assets/images/1x/third.png");
         background-size: cover;
-        background-position: 0 center;
-        background-repeat: no-repeat;
+        background: url("../assets/images/1x/third.png") no-repeat 0 center;
       }
     }
     &__third {
@@ -133,10 +129,8 @@ export default {
     }
     &__fourth {
       &__image {
-        background: url("../assets/images/1x/fourth.png");
         background-size: cover;
-        background-position: 0 center;
-        background-repeat: no-repeat;
+        background: url("../assets/images/1x/fourth.png") no-repeat 0 center;
       }
     }
     &__fifth {
