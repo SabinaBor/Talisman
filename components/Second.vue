@@ -1,5 +1,5 @@
 <template>
-  <div class="main__right__second">
+  <div id="second" class="main__right__second">
     <div class="main__right__second__text">
       <span class="title">О проекте Талисман</span>
       <h2 class="semibold">TALISMAN</h2>

@@ -17,6 +17,7 @@
     "vue": "^2.6.14",
     "vue-awesome-swiper": "^4.1.1",
     "vue-easy-slider": "^5.3.4",
+    "vue-flip": "^1.0.2",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^4.46.0"

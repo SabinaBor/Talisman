@@ -1,5 +1,5 @@
 <template>
-  <div class="main__right__first">
+  <div id="first" class="main__right__first">
     <h1>
       Идеальное<br />
       пространство<br />

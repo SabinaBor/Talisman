@@ -1,5 +1,5 @@
 <template>
-  <div class="main__right__sixth full-height">
+  <div id="sixth" class="main__right__sixth full-height">
     <span class="title">Квартиры</span>
     <div class='container'>
       <client-only>

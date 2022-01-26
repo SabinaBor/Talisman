@@ -1,5 +1,5 @@
 <template>
-    <div class="main__right__ninth full-height">
+    <div id="eightth" class="main__right__ninth full-height">
         <span class="title">Контакты</span>
     </div>
 </template>

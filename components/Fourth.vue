@@ -1,5 +1,5 @@
 <template>
-  <div class="main__right__second main__right__fourth full-height">
+  <div id="fourth" class="main__right__second main__right__fourth full-height">
     <div class="main__right__second__image main__right__fourth__image"></div>
     <div class="main__right__second__text">
       <span class="title">Инфраструктура</span>

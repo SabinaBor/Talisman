@@ -88,7 +88,7 @@ export default {
         padding-left: 8vw;
         width: 50%;
         span.title {
-          margin-bottom: 4vw;
+          margin-bottom: 3.6vw;
         }
         h2, h3, p {
           text-align: left;
@@ -116,6 +116,8 @@ export default {
         p {
           font-size: 0.8vw;
           color: #4D4D4D;
+          line-height: 1.4vw;
+          letter-spacing: 0.14px;
         }
       }
       &__image {
@@ -125,7 +127,11 @@ export default {
       }
     }
     &__third {
-      background: #A79554;
+      background: linear-gradient(-58.06deg, rgba(167, 149, 84, 1) 0%, rgba(249, 197, 58, 1) 100%);;
+      padding: 40px 8vw;
+      span.title {
+        color: #fff;
+      }
     }
     &__fourth {
       &__image {

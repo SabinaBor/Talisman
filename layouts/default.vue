@@ -11,13 +11,22 @@
               </div>
             </div>
             <div class="main__menu" :class="{'show': menuActive}">
-              <div class="main__menu__subtitle" v-for="(sub, id) in subtitleMenu" :key="id + 'b'">
-                {{sub.name}}
-              </div>
+              <a :href="sub.idUrl" v-for="(sub, id) in subtitleMenu" :key="id + 'b'">
+                <div class="main__menu__subtitle"
+                :class="{'active': scrollYPos < windowHeight*(id + 1) && scrollYPos >= windowHeight*(id)}">
+                  {{sub.name}}
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="main__left__download">
+            <div class="main__left__download__rectangle"></div>
+            <div class="main__left__download__text" :class="{'show': menuActive}">
+              СКАЧАТЬ ПЛАНИРОВКУ КВАРТИР
             </div>
           </div>
         </div>
-        <div class="main__right">
+        <div class="main__right" @click="menuActive=false">
             <Nuxt />
         </div>
     </div>
@@ -38,41 +47,57 @@ export default {
           subtitleMenu: [
             {
               id: 1,
-              name: "Home"
+              name: "Home",
+              idUrl: "#first"
             },
             {
               id: 2,
-              name: "О проекте"
+              name: "О проекте",
+              idUrl: "#second"
             },
             {
               id: 3,
-              name: "Галерея"
+              name: "Галерея",
+              idUrl: "#third"
             },
             {
               id: 4,
-              name: "Инфраструктура"
+              name: "Инфраструктура",
+              idUrl: "#fourth"
             },
             {
               id: 5,
-              name: "КОММЕРЦИЯ"
+              name: "КОММЕРЦИЯ",
+              idUrl: "#fifth"
             },
             {
               id: 6,
-              name: "Квартиры"
+              name: "Квартиры",
+              idUrl: "#sixth"
             },
             {
               id: 7,
-              name: "Планировка"
+              name: "Планировка",
+              idUrl: "#seventh"
             },
             {
               id: 8,
-              name: "Контакты"
+              name: "Контакты",
+              idUrl: "#eightth"
             }
           ]
         }
     },
     mounted() {
       window.addEventListener("scroll", this.scrollHandle);
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
     },
     destroyed () {
       window.removeEventListener("scroll", this.scrollHandle);
@@ -85,12 +110,22 @@ export default {
     methods: {
         scrollHandle() {
             this.scrollYPos = window.scrollY;
+            this.menuActive = false;
         },
     }
 }
 </script>
 
 <style lang="scss">
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: transparent;
+  &:hover {
+    text-decoration: none;
+  }
+}
 
 @keyframes showMenu {
   from {
@@ -103,8 +138,9 @@ export default {
 
 .main {
     &__left {
+        z-index: 10000;
         background: #fff;
-        padding: 40px 20px;
+        padding: 40px 0;
         display: flex;
         flex-direction: column;
         position: fixed;
@@ -113,8 +149,10 @@ export default {
         top: 0;
         left: 0;
         transition: 1s all;
+        border-right: 1px solid #A3A3A3;
         &>svg {
           width: 60px;
+          margin-left: 20px;
         }
         &.active {
           width: 590px;
@@ -124,6 +162,48 @@ export default {
         margin-top: 100px;
         align-items: flex-start;
       }
+      &__download {
+        display: flex;
+        align-items: center;
+        margin-top: auto;
+        margin-bottom: 24px;
+        padding: 15px 0 15px 42.5px;
+        transition: all .3s ease-in-out;
+        &__rectangle {
+          border: 2px solid #A3A3A3;
+          border-radius: 2px;
+          width: 15px;
+          height: 20px;
+          min-width: 15px;
+        }
+        &__text {
+          margin-left: 100px;
+          white-space: nowrap;
+          opacity: 0;
+          transition: opacity 0.2s linear;
+          padding-left: 0;
+          font-size: 0.8vw;
+          color: #A3A3A3;
+          text-transform: uppercase;
+          font-family: "FiraSans-Regular";
+          letter-spacing: .2em;
+          &.show {
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+            width: 100%;
+          }
+        }
+        &:hover {
+          cursor:pointer;
+          background: #C2A582;
+          .main__left__download__text {
+            color: #fff;
+          }
+          .main__left__download__rectangle {
+            border-color: #fff;
+          }
+        }
+      }
     }
     &__right {
         margin-left: 100px;
@@ -132,20 +212,58 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-left: 23px;
+        padding-left: 39px;
         width: fit-content;
+        justify-content: space-between;
+        height: 100%;
+        a {
+          width: 100%;
+        }
+        &:first-child {
+          padding-top: 0.4vw;
+        }
       &:nth-child(2) {
         align-items: flex-start;
         margin-left: 100px;
         opacity: 0;
         animation: none;
+        padding-left: 0;
         transition: opacity 0.2s linear;
         &.show {
           opacity: 1;
           transition: opacity 1s ease-in-out;
-          //animation: 0.5s linear showMenu;
-          //animation-delay: 0.2s;
-          //animation-fill-mode: forwards;
+          width: 100%;
+        }
+      }
+      &__subtitle {
+        font-size: 0.8vw;
+        color: #A3A3A3;
+        text-transform: uppercase;
+        font-family: "FiraSans-Regular";
+        letter-spacing: .2em;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        white-space: nowrap;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:hover {
+          cursor: pointer;
+          color: #5F4526;
+          font-family: "FiraSans-SemiBold";
+        }
+        &.active {
+          color: #5F4526;
+          &::after {
+            content: " ";
+            width: 100%;
+            content: "";
+            border-top: 1px solid #5f4526;
+            margin-left: 24px;
+          }
         }
       }
         &__dot {
@@ -157,17 +275,20 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
+            &:last-child {
+              margin-bottom: 0;
+            }
             &:hover {
                 cursor: pointer;
             }
           &.active {
             border-color: #5F4526;
-            width: 14px;
-            height: 14px;
+            width: 22px;
+            height: 22px;
             .circle {
               background: #5F4526;
-              width: 7px;
-              height: 7px;
+              width: 10px;
+              height: 10px;
               border-radius: 50%;
             }
           }

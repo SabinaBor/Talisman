@@ -1,5 +1,5 @@
 <template>
-    <div class="main__right__seventh full-height">
+    <div id="seventh" class="main__right__seventh full-height">
         <span class="title">Планировка</span>
     </div>
 </template>
