@@ -6,7 +6,11 @@
             <div class="main__menu">
               <div class="main__menu__dot"
                    v-for="i in 8" :key="i + 'a'"
-                   :class="{'active': scrollYPos < windowHeight*(i) && scrollYPos >= windowHeight*(i - 1)}">
+                   :class="{'active': 
+                   (scrollYPos < windowHeight*(i) && scrollYPos >= windowHeight*(i - 1) && i < 4)
+                   || (scrollYPos < windowHeight*(i+1) && scrollYPos >= windowHeight*(i-1) && i === 4)
+                   || (scrollYPos < windowHeight*(i+1) && scrollYPos >= windowHeight*(i) && i > 4)
+                   }">
                 <div class="circle"></div>
               </div>
             </div>

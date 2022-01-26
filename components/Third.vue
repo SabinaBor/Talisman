@@ -3,30 +3,111 @@
     <p><span class="title">Галерея</span></p>
     <p><span class="title"><strong>TALISMAN</strong> RESIDENTIAL COMPLEX</span></p>
     <div class="main__right__gallery">
-        <div v-for="i in 8" :key="i + 'c'" class="main__right__gallery__item">
+        <div @click="showGallery(id)" v-for="(img, id) in galleryList" :key="id + 'c'" class="main__right__gallery__item">
             <vue-flip active-hover :height="'100%'" :width="'100%'" transition="1s">
                 <template v-slot:front>
                     <div class="main__right__gallery__image">
+                        <img :src="img.url" />
                     </div>
                 </template>
                 <template v-slot:back>
                     <div class="main__right__gallery__text">
-                        HELLO, THIS IS BACKYARD
+                        <div class="main__right__gallery__number">
+                            {{ id + 1 }}
+                        </div>
+                        <p>{{img.name}}</p>
+                        <p>TALISMAN RESIDENTIAL<br />COMPLEX</p>
                     </div>
                 </template>
             </vue-flip>
         </div>
+    </div>
+    <div v-if="isModalOpened" class="modal">
+        <div @click="isModalOpened = false" class="empty"></div>
+        <div class='container'>
+      <client-only>
+        <slider
+          v-model='sliderIndex'
+          animation="fade"
+          stop-on-hover
+          :interval='6000'
+        >
+            <slider-item v-for="(image, index) in galleryList" :key="index">
+              <div class="img__wrapper">
+                <img :src="image.url" />
+              </div>
+            </slider-item>
+        </slider>
+      </client-only>
+    </div>
     </div>
 </div>
 </template>
 
 <script>
 import VueFlip from 'vue-flip';
+import {Slider, SliderItem} from 'vue-easy-slider'
 
 export default {
     name: "ThirdComponent",
     components: {
-        'vue-flip': VueFlip
+        'vue-flip': VueFlip,
+        Slider,
+        SliderItem
+    },
+    data() {
+        return {
+            isModalOpened: false,
+            sliderIndex: 0,
+            galleryList: [
+                {
+                    id: 1,
+                    name: "Беседка в зоне отдыха",
+                    url: "/six.png"
+                },
+                {
+                    id: 2,
+                    name: "Перед одного из домов",
+                    url: "/third.png"
+                },
+                {
+                    id: 3,
+                    name: "Внутренний двор",
+                    url: "/seventh.png"
+                },
+                {
+                    id: 4,
+                    name: "Кафе",
+                    url: "/eight.png"
+                },
+                {
+                    id: 5,
+                    name: "Парковка ",
+                    url: "/11.png"
+                },
+                {
+                    id: 6,
+                    name: "Подземная парковка",
+                    url: "/10.png"
+                },
+                {
+                    id: 7,
+                    name: "Парковка",
+                    url: "/12.png"
+                },
+                {
+                    id: 8,
+                    name: "Магазины у",
+                    url: "/nine.png"
+                }
+            ]
+        }
+    },
+    methods: {
+        showGallery(id) {
+            this.isModalOpened = true;
+            this.sliderIndex = id;
+        }
     }
 }
 </script>
@@ -51,63 +132,49 @@ export default {
             .main__right__gallery__image {
                 width: 100%;
                 height: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
             }
             .main__right__gallery__text {
                 text-align: center;
                 width: 100%;
                 height: 100%;
             }
-            &:nth-child(1) {
-                .main__right__gallery__image {
-                    background: url("/six.png") no-repeat center bottom;
-                    background-size: cover;
-                }
-            }
-            &:nth-child(2) {
-                .main__right__gallery__image {
-                    background: url("/third.png") no-repeat center center;
-                    background-size: cover;
-                }
-            }
-            &:nth-child(3) {
-                .main__right__gallery__image {
-                    background: url("/seventh.png") no-repeat center bottom;
-                    background-size: cover;
-                }
-            }
-            &:nth-child(4) {
-                .main__right__gallery__image {
-                    background: url("/eight.png") no-repeat center center;
-                    background-size: cover;
-                }
-            }
-            &:nth-child(5) {
-                .main__right__gallery__image {
-                    background: url("/11.png") no-repeat center bottom;
-                    background-size: cover;
-                }
-            }
-            &:nth-child(6) {
-                .main__right__gallery__image {
-                    background: url("/10.png") no-repeat center bottom;
-                    background-size: cover;
-                }
-            }
-            &:nth-child(7) {
-                .main__right__gallery__image {
-                    background: url("/12.png") no-repeat center bottom;
-                    background-size: cover;
-                }
-            }
-            &:nth-child(8) {
-                .main__right__gallery__image {
-                    background: url("/nine.png") no-repeat center center;
-                    background-size: cover;
-                }
-            }
             &:hover {
                 cursor: pointer;
             }
+        }
+        &__text {
+            background: #A3A3A3;
+            padding: 45px 42px 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            p {
+                font-size : 0.8vw;
+                letter-spacing : 0.35px;
+                color : #fff;
+                font-family: "FiraSans-Semibold";
+                margin-bottom: 0;
+                &:last-child {
+                    font-family: "FiraSans-Regular";
+                }
+            }
+        }
+        &__number {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4vw;
+            border: 5px solid #fff;
+            color: #fff;
+            margin-bottom: 40px;
         }
     }
 }
@@ -117,4 +184,40 @@ export default {
         height: 100%;
     }
 }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .empty {
+        width: 100%;
+        height: 100%;
+        opacity : 0.75;
+        background: #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .container {
+        width: 70%;
+        height: 70%;
+        max-width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .slider {
+            width: 100%!important;
+            height: 100%!important;
+            img {
+                width: 100%;
+            }
+        }
+    }
+  }
 </style>

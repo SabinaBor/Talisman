@@ -18,7 +18,6 @@
           pagination: {
             el: '.swiper-pagination'
           },
-          // Some Swiper option/callback...
         }
       }
     },

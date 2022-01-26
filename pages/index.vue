@@ -4,10 +4,10 @@
   <SecondComponent />
   <ThirdComponent />
   <FourthComponent />
+  <EightComponent />
   <FifthComponent />
   <SixthComponent />
   <SeventhComponent />
-  <!-- <EightComponent /> -->
   <NinthComponent />
 </div>
 </template>
@@ -49,6 +49,12 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .main {
   span.title {
     color: #C2A582;
