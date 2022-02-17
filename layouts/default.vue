@@ -186,11 +186,15 @@ a {
           opacity: 0;
           transition: opacity 0.2s linear;
           padding-left: 0;
-          font-size: 0.8vw;
+          font-size: 14px;
           color: #A3A3A3;
           text-transform: uppercase;
           font-family: "FiraSans-Regular";
           letter-spacing: .2em;
+          @media screen and (min-width: 1600px) and (min-height: 700px) {
+            font-size: 20px;
+            margin-left: 60px;
+          }
           &.show {
             opacity: 1;
             transition: opacity 1s ease-in-out;
@@ -224,7 +228,7 @@ a {
           width: 100%;
         }
         &:first-child {
-          padding-top: 0.4vw;
+          padding-top: 8px;
         }
       &:nth-child(2) {
         align-items: flex-start;
@@ -233,6 +237,10 @@ a {
         animation: none;
         padding-left: 0;
         transition: opacity 0.2s linear;
+        height: calc(100% + 8px);
+        @media screen and (min-width: 1600px) and (min-height: 700px) {
+          margin-left: 60px;
+        }
         &.show {
           opacity: 1;
           transition: opacity 1s ease-in-out;
@@ -240,7 +248,7 @@ a {
         }
       }
       &__subtitle {
-        font-size: 0.8vw;
+        font-size: 14px;
         color: #A3A3A3;
         text-transform: uppercase;
         font-family: "FiraSans-Regular";
@@ -251,6 +259,9 @@ a {
         align-items: center;
         width: 100%;
         white-space: nowrap;
+        @media screen and (min-width: 1600px) and (min-height: 700px) {
+          font-size: 20px;
+        }
         &:last-child {
           margin-bottom: 0;
         }
@@ -279,6 +290,9 @@ a {
             display: flex;
             justify-content: center;
             align-items: center;
+            @media screen and (min-width: 1600px) and (min-height: 700px) {
+              margin-bottom: 32px;
+            }
             &:last-child {
               margin-bottom: 0;
             }

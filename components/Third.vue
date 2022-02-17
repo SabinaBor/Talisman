@@ -63,42 +63,42 @@ export default {
                 {
                     id: 1,
                     name: "Беседка в зоне отдыха",
-                    url: "/six.png"
+                    url: "/Gallery_07.jpg"
                 },
                 {
                     id: 2,
                     name: "Перед одного из домов",
-                    url: "/third.png"
+                    url: "/Gallery_08.png"
                 },
                 {
                     id: 3,
                     name: "Внутренний двор",
-                    url: "/seventh.png"
+                    url: "/Gallery_06.png"
                 },
                 {
                     id: 4,
                     name: "Кафе",
-                    url: "/eight.png"
+                    url: "/Gallery_15.png"
                 },
                 {
                     id: 5,
-                    name: "Парковка ",
-                    url: "/11.png"
+                    name: "Коридор ",
+                    url: "/Apartment_03.png"
                 },
                 {
                     id: 6,
-                    name: "Подземная парковка",
-                    url: "/10.png"
+                    name: "Внутренний двор",
+                    url: "/Gallery_09.png"
                 },
                 {
                     id: 7,
-                    name: "Парковка",
-                    url: "/12.png"
+                    name: "Вид спереди",
+                    url: "/Gallery_17.png"
                 },
                 {
                     id: 8,
-                    name: "Магазины у",
-                    url: "/nine.png"
+                    name: "Вид с боку",
+                    url: "/Gallery_02.png"
                 }
             ]
         }

@@ -43,11 +43,11 @@ export default {
     &__item {
         color: #fff;
         &:nth-child(2) {
-            background: url("/15.png") no-repeat center center;
+            background: url("/06.jpg") no-repeat center center;
             background-size: cover;
         }
         &:nth-child(3) {
-            background: url("/16.png") no-repeat center center;
+            background: url("/07.jpg") no-repeat center center;
             background-size: cover;
         }
         &:nth-child(4) {

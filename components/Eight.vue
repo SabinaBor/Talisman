@@ -6,7 +6,7 @@
         ПОМЕЩЕНИЯМИ И ПАРКИНГОМ</p>
     </div>
     <div class="main__right__eight__image">
-        <img src="/04.png" />
+        <img src="/05.jpg" />
     </div>
 </div>
 </template>
@@ -38,10 +38,14 @@ export default {
         }
     }
     &__image {
+        overflow: hidden;
+        position: relative;
         display: flex;
         justify-content: center;
+        align-items: center;
         img {
             width: 100%;
+            margin-bottom: 136px;
         }
     }
 }

@@ -63,15 +63,15 @@ export default {
         galleryList: [
                 {
                     id: 1,
-                    url: "/14.png"
+                    url: "/01.png"
                 },
                 {
                     id: 2,
-                    url: "/fourth.png"
+                    url: "/02.png"
                 },
                 {
                     id: 3,
-                    url: "/third.png"
+                    url: "/03.png"
                 }
             ]
       }

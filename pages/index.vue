@@ -58,26 +58,75 @@ export default {
 .main {
   span.title {
     color: #C2A582;
-    font-size: 0.72vw;
+    font-size: 12px;
     text-transform: uppercase;
+    @media screen and (min-width: 1600px) and (min-height: 700px) {
+      font-size: 16px;
+    }
   }
   &__right {
     &__first {
-      background: url("../static/first.png") no-repeat center;
-      background-size: cover;
       height: 100vh;
-      padding: 40px 0 0 8vw;
+      padding: 40px 0 0 80px;
+      @media screen and (min-width: 1600px) and (min-height: 700px) {
+        padding: 60px 0 0 100px;
+      }
+      &__text {
+        width: fit-content;
+        position: relative;
+        padding: 12px;
+        z-index: 1000;
+        background: #5f4526cf;
+      }
+      &__slider {
+        position: absolute;
+        top: 0;
+        left: 100px;
+        width: calc(100vw - 100px);
+        height: 100vh;
+        .slider {
+          height: 100%!important;
+          width: 100%!important;
+          &-btn {
+            display: none!important;;
+          }
+          &-item {
+            .img__wrapper {
+              width: 100%!important;
+              height: 100%!important;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: absolute;
+              top: 0;
+              left: 0;
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
       h1, p {
         font-family: "FiraSans-Regular";
-        color: #fff
+        color: #fff;
+        position: relative;
+        z-index: 100000;
       }
       p {
-        font-size: 1.2vw;
+        font-size: 12px;
+        @media screen and (min-width: 1600px) and (min-height: 700px) {
+          font-size: 24px;
+        }
       }
       h1 {
-        font-size: 2.4vw;
+        font-size: 36px;
         text-transform: uppercase;
         line-height: 44px;
+        letter-spacing: 0.36px;
+        @media screen and (min-width: 1600px) and (min-height: 700px) {
+          font-size: 48px;
+        }
         span {
           font-family: "FiraSans-SemiBold";
         }
@@ -91,21 +140,31 @@ export default {
         margin: 0 auto;
         flex-direction: column;
         padding-top: 40px;
-        padding-left: 8vw;
+        padding-left: 100px;
         width: 50%;
+        @media screen and (min-width: 1600px) and (min-height: 700px) {
+          padding-top: 80px;
+          padding-left: 120px;
+        }
         span.title {
-          margin-bottom: 3.6vw;
+          margin-bottom: 36px;
         }
         h2, h3, p {
           text-align: left;
           letter-spacing: 1px;
-          margin-bottom: 1.2vw;
+          margin-bottom: 12px;
+          @media screen and (min-width: 1600px) and (min-height: 700px) {
+            margin-bottom: 20px;
+          }
         }
         h2 {
-          font-size: 2vw;
+          font-size: 24px;
           font-family: "FiraSans-Regular";
           &.semibold {
             font-family: "FiraSans-SemiBold";
+          }
+          @media screen and (min-width: 1600px) and (min-height: 700px) {
+            font-size: 28px;
           }
         }
         h2, h3 {
@@ -116,19 +175,25 @@ export default {
           font-family: "FiraSans-Regular";
         }
         h3 {
-          font-size: 1.2vw;
+          font-size: 16px;
           text-transform: uppercase;
+          @media screen and (min-width: 1600px) and (min-height: 700px) {
+            font-size: 20px;
+          }
         }
         p {
-          font-size: 0.8vw;
+          font-size: 12px;
           color: #4D4D4D;
           line-height: 1.4vw;
           letter-spacing: 0.14px;
+          @media screen and (min-width: 1600px) and (min-height: 700px) {
+            font-size: 16px;
+          }
         }
       }
       &__image {
         width: 50%;
-        background: url("../static/third.png") no-repeat 0 center;
+        background: url("../static/03.png") no-repeat 0 center;
         background-size: cover;
       }
     }
@@ -141,7 +206,7 @@ export default {
     }
     &__fourth {
       &__image {
-        background: url("../static/fourth.png") no-repeat 0 center;
+        background: url("../static/04.png") no-repeat 0 center;
         background-size: cover;
       }
     }
