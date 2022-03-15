@@ -154,6 +154,9 @@ a {
         left: 0;
         transition: 1s all;
         border-right: 1px solid #A3A3A3;
+        @media only screen and (max-width: 1025px) {
+         display: none;
+        }
         &>svg {
           width: 60px;
           margin-left: 20px;

@@ -1,15 +1,15 @@
 <template>
-<div>
-  <FirstComponent />
-  <SecondComponent />
-  <ThirdComponent />
-  <FourthComponent />
-  <EightComponent />
-  <FifthComponent />
-  <SixthComponent />
-  <SeventhComponent />
-  <NinthComponent />
-</div>
+  <div>
+    <FirstComponent />
+    <SecondComponent />
+    <ThirdComponent />
+    <FourthComponent />
+    <EightComponent />
+    <FifthComponent />
+    <SixthComponent />
+    <SeventhComponent />
+    <NinthComponent />
+  </div>
 </template>
 
 <script>
@@ -24,7 +24,7 @@ import EightComponent from "@/components/Eight";
 import NinthComponent from "@/components/Ninth";
 
 export default {
-  name: 'IndexPage',
+  name: "IndexPage",
   components: {
     FirstComponent,
     SecondComponent,
@@ -34,18 +34,18 @@ export default {
     SixthComponent,
     SeventhComponent,
     EightComponent,
-    NinthComponent
+    NinthComponent,
   },
   data() {
     return {
       list: [
-        { backgroundColor: '#3f51b5', width: '500px', height: '200px' },
-        { backgroundColor: '#eee', width: '500px', height: '200px' },
-        { backgroundColor: '#f44336', width: '500px', height: '200px' },
-      ]
-    }
-  }
-}
+        { backgroundColor: "#3f51b5", width: "500px", height: "200px" },
+        { backgroundColor: "#eee", width: "500px", height: "200px" },
+        { backgroundColor: "#f44336", width: "500px", height: "200px" },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss">
@@ -56,8 +56,12 @@ export default {
 }
 
 .main {
+  @media only screen and (max-width: 1025px) {
+    width: 100%;
+    overflow: hidden;
+  }
   span.title {
-    color: #C2A582;
+    color: #c2a582;
     font-size: 12px;
     text-transform: uppercase;
     @media screen and (min-width: 1600px) and (min-height: 700px) {
@@ -65,11 +69,21 @@ export default {
     }
   }
   &__right {
+    @media only screen and (max-width: 1025px) {
+      margin: 0;
+      width: 100%;
+    }
     &__first {
       height: 100vh;
       padding: 40px 0 0 80px;
       @media screen and (min-width: 1600px) and (min-height: 700px) {
         padding: 60px 0 0 100px;
+      }
+      @media only screen and (max-width: 1025px) {
+        width: 100vw;
+        height: 250px;
+        position: relative;
+        padding: 16px 0 0 66px;
       }
       &__text {
         width: fit-content;
@@ -77,6 +91,11 @@ export default {
         padding: 12px;
         z-index: 1000;
         background: #5f4526cf;
+        @media only screen and (max-width: 1025px) {
+          top: 0;
+          left: 0;
+          width: 84%;
+        }
       }
       &__slider {
         position: absolute;
@@ -84,16 +103,30 @@ export default {
         left: 100px;
         width: calc(100vw - 100px);
         height: 100vh;
+        left: 0;
+        @media only screen and (max-width: 1025px) {
+          width: 100vw;
+          height: fit-content;
+        }
         .slider {
-          height: 100%!important;
-          width: 100%!important;
+          height: 100% !important;
+          width: 100% !important;
+          @media only screen and (max-width: 1025px) {
+            height: 250px !important;
+          }
+          .slider-indicator-icon {
+            @media only screen and (max-width: 1025px) {
+              border: 2px solid #fff !important;
+              margin: 0 8px !important;
+            }
+          }
           &-btn {
-            display: none!important;;
+            display: none !important;
           }
           &-item {
             .img__wrapper {
-              width: 100%!important;
-              height: 100%!important;
+              width: 100% !important;
+              height: 100% !important;
               display: flex;
               justify-content: center;
               align-items: center;
@@ -107,7 +140,8 @@ export default {
           }
         }
       }
-      h1, p {
+      h1,
+      p {
         font-family: "FiraSans-Regular";
         color: #fff;
         position: relative;
@@ -118,6 +152,14 @@ export default {
         @media screen and (min-width: 1600px) and (min-height: 700px) {
           font-size: 24px;
         }
+        @media only screen and (max-width: 1025px) {
+          width: 72%;
+          font-size: 10px;
+          margin: 0;
+          br {
+            display: none;
+          }
+        }
       }
       h1 {
         font-size: 36px;
@@ -127,6 +169,12 @@ export default {
         @media screen and (min-width: 1600px) and (min-height: 700px) {
           font-size: 48px;
         }
+        @media only screen and (max-width: 1025px) {
+          font-size: 20px;
+          line-height: initial;
+          letter-spacing: initial;
+          width: fit-content;
+        }
         span {
           font-family: "FiraSans-SemiBold";
         }
@@ -135,6 +183,11 @@ export default {
     &__second {
       display: flex;
       height: 100vh;
+      @media only screen and (max-width: 1025px) {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+      }
       &__text {
         display: flex;
         margin: 0 auto;
@@ -146,15 +199,29 @@ export default {
           padding-top: 80px;
           padding-left: 120px;
         }
+        @media only screen and (max-width: 1025px) {
+          padding: 40px 0;
+          width: 80%;
+        }
         span.title {
           margin-bottom: 36px;
+          @media only screen and (max-width: 1025px) {
+            margin-bottom: 16px;
+          }
         }
-        h2, h3, p {
+        h2,
+        h3,
+        p {
           text-align: left;
           letter-spacing: 1px;
           margin-bottom: 12px;
           @media screen and (min-width: 1600px) and (min-height: 700px) {
             margin-bottom: 20px;
+          }
+          @media only screen and (max-width: 1025px) {
+            margin-bottom: 8px;
+            line-height: initial!important;
+            letter-spacing: initial!important;
           }
         }
         h2 {
@@ -167,11 +234,13 @@ export default {
             font-size: 28px;
           }
         }
-        h2, h3 {
-          color: #5F4526;
+        h2,
+        h3 {
+          color: #5f4526;
           line-height: 20px;
         }
-        h3, p {
+        h3,
+        p {
           font-family: "FiraSans-Regular";
         }
         h3 {
@@ -183,7 +252,7 @@ export default {
         }
         p {
           font-size: 12px;
-          color: #4D4D4D;
+          color: #4d4d4d;
           line-height: 1.4vw;
           letter-spacing: 0.14px;
           @media screen and (min-width: 1600px) and (min-height: 700px) {
@@ -198,8 +267,15 @@ export default {
       }
     }
     &__third {
-      background: linear-gradient(-58.06deg, rgba(167, 149, 84, 1) 0%, rgba(249, 197, 58, 1) 100%);;
+      background: linear-gradient(
+        -58.06deg,
+        rgba(167, 149, 84, 1) 0%,
+        rgba(249, 197, 58, 1) 100%
+      );
       padding: 40px 8vw;
+      @media only screen and (max-width: 1025px) {
+        height: auto!important;;
+      }
       span.title {
         color: #fff;
       }
@@ -211,16 +287,16 @@ export default {
       }
     }
     &__fifth {
-      background: #B0A99E;
+      background: #b0a99e;
     }
     &__sixth {
-      background: #F5EDE2;
+      background: #f5ede2;
     }
     &__seventh {
       background: #565044;
     }
     &__ninth {
-      background: #5F4526;
+      background: #5f4526;
     }
   }
 }
