@@ -81,9 +81,12 @@ export default {
       }
       @media only screen and (max-width: 1025px) {
         width: 100vw;
-        height: 250px;
+        height: 300px;
         position: relative;
         padding: 16px 0 0 66px;
+      }
+      @media only screen and (max-width: 450px) {
+        height: 250px;
       }
       &__text {
         width: fit-content;
@@ -103,15 +106,18 @@ export default {
         left: 100px;
         width: calc(100vw - 100px);
         height: 100vh;
-        left: 0;
         @media only screen and (max-width: 1025px) {
           width: 100vw;
           height: fit-content;
+          left: 0;
         }
         .slider {
           height: 100% !important;
           width: 100% !important;
           @media only screen and (max-width: 1025px) {
+            height: 300px!important;
+          }
+          @media only screen and (max-width: 450px) {
             height: 250px !important;
           }
           .slider-indicator-icon {
@@ -134,6 +140,7 @@ export default {
               top: 0;
               left: 0;
               img {
+                height: 100%;
                 width: 100%;
               }
             }
@@ -188,6 +195,19 @@ export default {
         width: 100%;
         height: auto;
       }
+      @media only screen and (min-height: 680px) and (max-width: 850px) {
+        height: calc(100vh - 300px);
+      }
+      @media only screen and (max-width: 450px) {
+        padding: 0 28px;
+        width: 100%;
+      }
+      @media only screen and (max-height: 680px) and (max-width: 450px) {
+        height: auto;
+      }
+      @media only screen and (min-height: 680px) and (max-width: 450px) {
+        height: calc(100vh - 250px);
+      }
       &__text {
         display: flex;
         margin: 0 auto;
@@ -202,6 +222,10 @@ export default {
         @media only screen and (max-width: 1025px) {
           padding: 40px 0;
           width: 80%;
+        }
+        @media only screen and (max-width: 850px) {
+          padding: 16px 0 40px;
+          margin: 0;
         }
         span.title {
           margin-bottom: 36px;
@@ -303,5 +327,11 @@ export default {
 
 .full-height {
   height: 100vh;
+  @media only screen and (max-width: 850px) {
+    height: auto;
+  }
+  @media only screen and (max-width: 850px) {
+    padding: 12px 28px 40px;
+  }
 }
 </style>

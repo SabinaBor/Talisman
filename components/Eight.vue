@@ -24,7 +24,10 @@ export default {
     display: grid;
     grid-template-rows: 136px 1fr;
     overflow-y: hidden;
-    
+    @media only screen and (max-width: 850px) {
+      display: block;
+    }
+
     &> div > p {
         padding-left: 8vw;
         margin-bottom: 0.8vw!important;
@@ -43,6 +46,12 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
+      @media only screen and (max-width: 850px) {
+        max-height: 600px;
+      }
+      @media only screen and (max-width: 450px) {
+        max-height: 300px;
+      }
         img {
             width: 100%;
             margin-bottom: 136px;

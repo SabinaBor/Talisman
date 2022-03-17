@@ -2,7 +2,7 @@
 <div id="third" class="main__right__third full-height">
     <p><span class="title">Галерея</span></p>
     <p><span class="title"><strong>TALISMAN</strong> RESIDENTIAL COMPLEX</span></p>
-    <div class="main__right__gallery">
+    <div class="main__right__gallery desktop">
         <div @click="showGallery(id)" v-for="(img, id) in galleryList" :key="id + 'c'" class="main__right__gallery__item">
             <vue-flip active-hover :height="'100%'" :width="'100%'" transition="1s">
                 <template v-slot:front>
@@ -22,6 +22,22 @@
             </vue-flip>
         </div>
     </div>
+  <div class="main__right__third__slider mobile">
+    <client-only>
+      <slider
+        v-model='sliderIndex'
+        animation="fade"
+        stop-on-hover
+        :interval='6000'
+      >
+        <slider-item v-for="(image, index) in galleryList" :key="index">
+          <div class="img__wrapper">
+            <img :src="image.url" />
+          </div>
+        </slider-item>
+      </slider>
+    </client-only>
+  </div>
     <div v-if="isModalOpened" class="modal">
         <div @click="isModalOpened = false" class="empty"></div>
         <div class='container'>
@@ -123,6 +139,14 @@ export default {
             margin-bottom: 0;
         }
     }
+  &__slider {
+    .img__wrapper {
+      height: 100%;
+      img {
+        height: 100%;
+      }
+    }
+  }
     .main__right__gallery {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
