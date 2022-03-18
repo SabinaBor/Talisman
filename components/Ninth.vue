@@ -57,6 +57,9 @@ export default {
 <style lang="scss" scoped>
 .main__right__ninth {
   position: relative;
+  @media only screen and (max-width: 1025px) {
+    padding: 0;
+  }
   .contacts {
     height: 100%;
     width: 100%;
@@ -67,6 +70,9 @@ export default {
       width: 100%;
       background-size: cover;
       background-position: center;
+      @media only screen and (max-width: 1025px) {
+        height: auto;
+      }
     }
     &__top {
       background: rgba(47, 94, 57, 0.85);
@@ -76,32 +82,58 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      @media only screen and (max-width: 1025px) {
+        height: 100%;
+        padding: 50px 28px;
+      }
       h3 {
         font-size: 48px;
         font-weight: 700;
         color: #fff;
         letter-spacing: 0.46px;
         margin-bottom: 16px;
+        @media only screen and (max-width: 1025px) {
+          font-size: 20px;
+        }
       }
       p {
         font-size: 18px;
         margin-bottom: 32px;
         color: #fff;
+        @media only screen and (max-width: 1025px) {
+          font-size: 12px;
+          text-align: center;
+          margin-bottom: 20px;
+        }
       }
       &__form {
         width: 50%;
         display: flex;
+        @media only screen and (max-width: 1025px) {
+          flex-direction: column;
+          width: 100%;
+        }
         input {
           width: 50%;
           height: 50px;
           font-size: 14px;
           padding-left: 16px;
+          @media only screen and (max-width: 1025px) {
+            width: 100%;
+            margin-bottom: 20px;
+            font-size: 12px;
+          }
         }
         button {
           width: 50px;
           height: 50px;
           padding: 0;
           border: none;
+          @media only screen and (max-width: 1025px) {
+            margin: 0 auto;
+            width: 120px;
+            background: #f9c53a;
+          }
           img {
             height: 100%;
           }
@@ -113,6 +145,11 @@ export default {
       background: #45321c;
       display: flex;
       align-items: center;
+      @media only screen and (max-width: 1025px) {
+        height: auto;
+        width: 100%;
+        display: block;
+      }
       &__left {
         height: 100%;
         width: 30%;
@@ -120,12 +157,21 @@ export default {
         flex-direction: column;
         justify-content: center;
         padding: 16px 16px 16px 64px;
+        @media only screen and (max-width: 1025px) {
+          width: 100%;
+          padding: 20px 28px;
+        }
         p {
           font-size: 16px;
           color: #fff;
           margin-bottom: 8px;
           font-weight: 300;
           letter-spacing: 0.05em;
+          @media only screen and (max-width: 1025px) {
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+          }
           &:first-child {
             font-weight: 600;
             font-size: 18px;
@@ -142,10 +188,16 @@ export default {
     &__bottom {
       height: 20%;
       padding-top: 16px;
+      @media only screen and (max-width: 1025px) {
+        padding: 0;
+      }
       &__links {
         display: flex;
         align-items: center;
         height: 60%;
+        @media only screen and (max-width: 1025px) {
+          flex-direction: column;
+        }
         .facebook-link,
         .instagram-link {
           width: 50%;
@@ -154,6 +206,11 @@ export default {
           align-items: center;
           height: 100%;
           padding-left: 64px;
+          @media only screen and (max-width: 1025px) {
+            width: 100%;
+            height: 80px;
+            padding: 0 0 0 28px;
+          }
           &:hover {
             cursor: pointer;
             background: #45321c;
@@ -161,6 +218,9 @@ export default {
           }
           img {
             width: 150px;
+            @media only screen and (max-width: 1025px) {
+              padding: 28px 0;
+            }
           }
           .arrow-right {
             height: 100%;
@@ -188,6 +248,10 @@ export default {
           display: flex;
           align-items: center;
           padding-left: 64px;
+          @media only screen and (max-width: 1025px) {
+            font-size: 8px;
+            padding: 28px;
+          }
         }
       }
     }

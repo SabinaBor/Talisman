@@ -72,6 +72,9 @@ export default {
 <style lang="scss" scoped>
 .main__right__seventh {
   position: relative;
+  @media only screen and (max-width: 1025px) {
+    padding: 12px 28px 60px;
+  }
   &__items {
     display: flex;
     margin: 0 auto;
@@ -79,9 +82,17 @@ export default {
     padding: 80px 70px;
     flex-wrap: wrap;
     justify-content: center;
+    @media only screen and (max-width: 1025px) {
+      flex-direction: column;
+      padding: 0;
+    }
   }
   &__item {
     width: calc(100% / 3 - 70px);
+    @media only screen and (max-width: 1025px) {
+      width: 100%;
+      margin-top: 40px;
+    }
     &__top {
       margin-bottom: 32px;
       display: flex;
@@ -113,15 +124,18 @@ export default {
         }
       }
       &:hover {
-        background : rgba(249, 197, 58, 0.5);
+        background: rgba(249, 197, 58, 0.5);
         cursor: pointer;
         .apartment-type p {
-          color: #f9c53a
+          color: #f9c53a;
         }
       }
     }
     &__bottom {
       width: 80%;
+      @media only screen and (max-width: 1025px) {
+        width: 100%;
+      }
       p {
         &.white {
           font-size: 14px;
@@ -149,6 +163,12 @@ export default {
     bottom: 87px;
     left: 178px;
     cursor: pointer;
+    @media only screen and (max-width: 1025px) {
+      position: relative;
+      left: 0;
+      bottom: 0;
+      margin-top: 40px;
+    }
   }
 }
 </style>
