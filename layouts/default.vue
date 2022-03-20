@@ -4,7 +4,7 @@
             <Logo />
           <div class="main__left__item">
             <div class="main__menu">
-              <div class="main__menu__dot"
+              <!-- <div class="main__menu__dot"
                    v-for="i in 8" :key="i + 'a'"
                    :class="{'active': 
                    (scrollYPos < windowHeight*(i) && scrollYPos >= windowHeight*(i - 1) && i < 4)
@@ -12,12 +12,15 @@
                    || (scrollYPos < windowHeight*(i+1) && scrollYPos >= windowHeight*(i) && i > 4)
                    }">
                 <div class="circle"></div>
-              </div>
+              </div> -->
             </div>
             <div class="main__menu" :class="{'show': menuActive}">
               <a :href="sub.idUrl" v-for="(sub, id) in subtitleMenu" :key="id + 'b'">
                 <div class="main__menu__subtitle"
                 :class="{'active': scrollYPos < windowHeight*(id + 1) && scrollYPos >= windowHeight*(id)}">
+                <div class=" main__menu__dot">
+                  <div class="circle"></div>
+                </div>
                   {{sub.name}}
                 </div>
               </a>
@@ -25,9 +28,11 @@
           </div>
           <div class="main__left__download">
             <div class="main__left__download__rectangle"></div>
+            <a href="/Планировка_Талисман.zip" download="Планировка_Талисман" >
             <div class="main__left__download__text" :class="{'show': menuActive}">
               СКАЧАТЬ ПЛАНИРОВКУ КВАРТИР
             </div>
+            </a>
           </div>
         </div>
         <div class="main__right" @click="menuActive=false">
@@ -223,7 +228,7 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-left: 39px;
+        padding-left: 0;
         width: fit-content;
         justify-content: space-between;
         height: 100%;
@@ -235,10 +240,10 @@ a {
         }
       &:nth-child(2) {
         align-items: flex-start;
-        margin-left: 100px;
-        opacity: 0;
+        opacity: 1;
+        overflow: hidden;
         animation: none;
-        padding-left: 0;
+        padding-left: 39px;
         transition: opacity 0.2s linear;
         height: calc(100% + 8px);
         @media screen and (min-width: 1600px) and (min-height: 700px) {
@@ -256,17 +261,16 @@ a {
         text-transform: uppercase;
         font-family: "FiraSans-Regular";
         letter-spacing: .2em;
-        margin-bottom: 12px;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
         white-space: nowrap;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        column-gap: 100px;
+        margin-bottom: 12px;
+        align-items: center;
         @media screen and (min-width: 1600px) and (min-height: 700px) {
           font-size: 20px;
-        }
-        &:last-child {
-          margin-bottom: 0;
         }
         &:hover {
           cursor: pointer;
@@ -275,12 +279,27 @@ a {
         }
         &.active {
           color: #5F4526;
+          margin-left: -6px;
+          column-gap: 94px;
           &::after {
             content: " ";
             width: 100%;
             content: "";
             border-top: 1px solid #5f4526;
             margin-left: 24px;
+          }
+          .main__menu__dot {
+            border-color: #5F4526;
+            width: 22px;
+            min-width: 22px;
+            height: 22px;
+            .circle {
+              background: #5F4526;
+              width: 10px;
+              height: 10px;
+              min-width: 10px;
+              border-radius: 50%;
+            }
           }
         }
       }
@@ -289,6 +308,7 @@ a {
             border-radius: 50%;
             width: 10px;
             height: 10px;
+            min-width: 10px;
             margin-bottom: 14px;
             display: flex;
             justify-content: center;
@@ -302,17 +322,6 @@ a {
             &:hover {
                 cursor: pointer;
             }
-          &.active {
-            border-color: #5F4526;
-            width: 22px;
-            height: 22px;
-            .circle {
-              background: #5F4526;
-              width: 10px;
-              height: 10px;
-              border-radius: 50%;
-            }
-          }
         }
     }
 }
