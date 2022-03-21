@@ -93,7 +93,7 @@ export default {
         position: relative;
         padding: 12px;
         z-index: 1000;
-        background: #5f4526cf;
+        // background: #5f4526cf;
         @media only screen and (max-width: 1025px) {
           top: 0;
           left: 0;
@@ -115,7 +115,7 @@ export default {
           height: 100% !important;
           width: 100% !important;
           @media only screen and (max-width: 1025px) {
-            height: 300px!important;
+            height: 300px !important;
           }
           @media only screen and (max-width: 450px) {
             height: 250px !important;
@@ -194,12 +194,12 @@ export default {
         flex-direction: column;
         width: 100%;
         height: auto;
+        padding: 0!important;
       }
       @media only screen and (min-height: 680px) and (max-width: 850px) {
         height: calc(100vh - 300px);
       }
       @media only screen and (max-width: 450px) {
-        padding: 0 28px;
         width: 100%;
       }
       @media only screen and (max-height: 680px) and (max-width: 450px) {
@@ -224,13 +224,15 @@ export default {
           width: 80%;
         }
         @media only screen and (max-width: 850px) {
-          padding: 16px 0 40px;
+          padding: 16px 28px;
+          width: 100%;
+          height: calc(100vh - 250px);
           margin: 0;
         }
         span.title {
           margin-bottom: 36px;
           @media only screen and (max-width: 1025px) {
-            margin-bottom: 16px;
+            margin-bottom: 8px;
           }
         }
         h2,
@@ -244,15 +246,21 @@ export default {
           }
           @media only screen and (max-width: 1025px) {
             margin-bottom: 8px;
-            line-height: initial!important;
-            letter-spacing: initial!important;
+            line-height: initial !important;
+            letter-spacing: initial !important;
           }
         }
         h2 {
           font-size: 24px;
           font-family: "FiraSans-Regular";
+          @media only screen and (max-width: 850px) {
+            font-size: 20px;
+          }
           &.semibold {
             font-family: "FiraSans-SemiBold";
+            @media only screen and (max-width: 850px) {
+              margin-bottom: 0;
+            }
           }
           @media screen and (min-width: 1600px) and (min-height: 700px) {
             font-size: 28px;
@@ -288,6 +296,10 @@ export default {
         width: 50%;
         background: url("../static/03.png") no-repeat 0 center;
         background-size: cover;
+        @media only screen and (max-width: 850px) {
+          height: 400px;
+          width: 100%;
+        }
       }
     }
     &__third {
@@ -298,7 +310,7 @@ export default {
       );
       padding: 40px 8vw;
       @media only screen and (max-width: 1025px) {
-        height: auto!important;;
+        height: auto !important;
       }
       span.title {
         color: #fff;
